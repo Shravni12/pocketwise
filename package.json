@@ -1,0 +1,30 @@
+{
+  "name": "pocketwise",
+  "version": "1.0.0",
+  "description": "PocketWise - student money manager for Android, iOS, Windows and web",
+  "main": "electron/main.js",
+  "author": "Sahil",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64 --publish never"
+  },
+  "build": {
+    "appId": "com.pocketwise.app",
+    "productName": "PocketWise",
+    "files": ["electron/**", "www/**", "package.json"],
+    "directories": { "buildResources": "build" },
+    "win": { "target": ["nsis", "portable"], "icon": "build/icon.png" }
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/ios": "^6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.2.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}
